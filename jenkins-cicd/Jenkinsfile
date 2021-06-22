@@ -1,0 +1,46 @@
+#this file contains the cicd steps for the java
+//
+/* */
+
+#we have following stages
+#checkout
+#build
+#deploy
+#test 
+
+stage ("checkout")
+{
+step {
+#checkout 
+git clone <url>
+}
+}
+stage ("build")
+{
+step {
+#build 
+mvn clean package
+}
+}
+
+stage ("deploy")
+{
+step {
+#copy the package to target 
+sh "linux commands(scp)"
+}
+}
+stage ("deploy")
+{
+step {
+#deploy
+sh "curl)"
+}
+}
+
+
+
+
+
+
+
